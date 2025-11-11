@@ -1,8 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TypeScript Guide - Next.js Learning Project
 
-## Getting Started
+A comprehensive, interactive learning resource for TypeScript built with Next.js. This project demonstrates TypeScript concepts, best practices, and real-world examples through hands-on tutorials and side-by-side comparisons with JavaScript.
 
-First, run the development server:
+## 🎯 Project Purpose
+
+This project serves as an educational guide for developers learning TypeScript, specifically in the context of Next.js applications. It provides:
+
+- **Interactive Examples**: Compare TypeScript and JavaScript implementations side-by-side
+- **Type System Tutorials**: Learn about interfaces, types, generics, and more
+- **Next.js Integration**: Understand how TypeScript enhances Next.js development
+- **API Examples**: See type-safe API calls and data fetching patterns
+- **Best Practices**: Discover recommended approaches for TypeScript in modern web development
+
+## ✨ Features
+
+### 📚 Learning Sections
+
+- **TypeScript Definitions**: Comprehensive guide to type definitions, interfaces, type aliases, generics, and utility types
+- **Why TypeScript in Next.js**: Explore the benefits and advantages of using TypeScript with Next.js
+- **Component Examples**: Interactive examples comparing TypeScript and JavaScript React components
+- **API Examples**: Type-safe API integration examples with proper error handling
+
+### 🔍 Key Topics Covered
+
+- Basic TypeScript types (string, number, boolean, etc.)
+- Interfaces and type definitions
+- Type aliases and union/intersection types
+- Generics and reusable type patterns
+- Type-safe API calls and data fetching
+- Next.js-specific TypeScript features (route params, metadata, etc.)
+- Best practices for TypeScript in production
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ installed
+- npm, yarn, pnpm, or bun package manager
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd next-typescript
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -14,23 +69,56 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: [Next.js 16](https://nextjs.org) with App Router
+- **Language**: TypeScript 5
+- **UI**: React 19
+- **Styling**: Tailwind CSS 4
+- **HTTP Client**: Axios (for API examples)
+- **Font**: Geist (optimized with `next/font`)
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+next-typescript/
+├── src/
+│   ├── app/                    # Next.js App Router pages
+│   │   ├── page.tsx            # Home page with TypeScript overview
+│   │   ├── typescript-definitions/  # Type definitions tutorial
+│   │   ├── why-typescript-nextjs/   # Benefits of TypeScript in Next.js
+│   │   ├── examples/           # Component examples
+│   │   └── api-examples/       # API integration examples
+│   └── components/
+│       ├── TypeScriptComponents/    # TypeScript component examples
+│       └── JavaScriptComponents/    # JavaScript component examples (for comparison)
+├── public/                     # Static assets
+└── package.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎓 How to Use This Project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Start with the Home Page**: Get an overview of TypeScript and its benefits
+2. **Explore Type Definitions**: Learn about the TypeScript type system
+3. **Understand Next.js Integration**: See why TypeScript is valuable in Next.js
+4. **Compare Components**: View side-by-side comparisons of TypeScript vs JavaScript
+5. **Study API Examples**: Learn type-safe API integration patterns
 
-## Deploy on Vercel
+## 📝 Available Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `npm run dev` - Start the development server
+- `npm run build` - Build the production application
+- `npm run start` - Start the production server
+- `npm run lint` - Run ESLint to check code quality
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📖 Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/) - Official TypeScript guide
+- [Learn Next.js](https://nextjs.org/learn) - Interactive Next.js tutorial
+
+---
+
+**Built with ❤️ by [Gonza](https://github.com/gonzalorocha)** using Next.js and TypeScript
