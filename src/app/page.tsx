@@ -28,7 +28,7 @@ export default function Home() {
 				{/* Main Heading */}
 				<h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-8 text-center">
 					TypeScript Guide
-					</h1>
+				</h1>
 
 				{/* Navigation Links */}
 				<nav className="mb-12 flex gap-4 flex-wrap justify-center">
@@ -218,13 +218,15 @@ export default function Home() {
 									TypeScript&apos;s primary ways of structuring data:
 								</p>
 								<pre className="bg-gray-900 dark:bg-black text-green-400 p-4 rounded overflow-x-auto">
-									<code>{`interface User {
-  id: number;
-  name: string;
-  email: string;
-  age?: number; // Optional property
-  readonly createdAt: Date; // Readonly property
-}`}</code>
+									<code>
+										{`interface User {
+										id: number;
+										name: string;
+										email: string;
+										age?: number; // Optional property
+										readonly createdAt: Date; // Readonly property
+									}`}
+									</code>
 								</pre>
 								<p className="text-gray-700 dark:text-gray-300 mt-3">
 									Interfaces can be extended, merged, and used to ensure objects
@@ -466,7 +468,7 @@ type ManagerEmployee = Employee & Manager;`}</code>
 								</p>
 							</Link>
 						</div>
-				</div>
+					</div>
 				</section>
 			</main>
 		</div>

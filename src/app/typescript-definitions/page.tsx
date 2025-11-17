@@ -1,16 +1,22 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-	title: 'TypeScript Definitions | TypeScript Guide',
+	title: "TypeScript Definitions | TypeScript Guide",
 	description:
-		'Learn about TypeScript type definitions, interfaces, types, and how to use them effectively in your projects.',
-	keywords: ['TypeScript', 'type definitions', 'interfaces', 'types', 'programming'],
+		"Learn about TypeScript type definitions, interfaces, types, and how to use them effectively in your projects.",
+	keywords: [
+		"TypeScript",
+		"type definitions",
+		"interfaces",
+		"types",
+		"programming",
+	],
 	openGraph: {
-		title: 'TypeScript Definitions | TypeScript Guide',
+		title: "TypeScript Definitions | TypeScript Guide",
 		description:
-			'Comprehensive guide to TypeScript type definitions, interfaces, and types',
-		type: 'website',
+			"Comprehensive guide to TypeScript type definitions, interfaces, and types",
+		type: "website",
 	},
 };
 
@@ -50,30 +56,30 @@ export default function TypeScriptDefinitionsPage() {
 							</h3>
 							<pre className="bg-gray-900 dark:bg-black text-green-400 p-4 rounded overflow-x-auto">
 								<code>{`// String
-let name: string = "John";
+				let name: string = "John";
 
-// Number
-let age: number = 30;
+				// Number
+				let age: number = 30;
 
-// Boolean
-let isActive: boolean = true;
+				// Boolean
+				let isActive: boolean = true;
 
-// Null and Undefined
-let value: null = null;
-let undefinedValue: undefined = undefined;
+				// Null and Undefined
+				let value: null = null;
+				let undefinedValue: undefined = undefined;
 
-// Any (avoid when possible)
-let anything: any = "can be anything";
+				// Any (avoid when possible)
+				let anything: any = "can be anything";
 
-// Void (for functions that return nothing)
-function logMessage(): void {
-  console.log("Hello");
-}
+				// Void (for functions that return nothing)
+				function logMessage(): void {
+					console.log("Hello");
+				}
 
-// Never (for functions that never return)
-function throwError(): never {
-  throw new Error("Error!");
-}`}</code>
+				// Never (for functions that never return)
+				function throwError(): never {
+					throw new Error("Error!");
+				}`}</code>
 							</pre>
 						</div>
 
@@ -235,6 +241,153 @@ const manager: ManagerEmployee = {
 					</div>
 				</section>
 
+				{/* Types vs Interfaces */}
+				<section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 mb-8">
+					<h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+						Types vs Interfaces
+					</h2>
+					<div className="space-y-6">
+						<div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+							<h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">
+								Key Differences
+							</h3>
+							<div className="space-y-4 text-gray-700 dark:text-gray-300">
+								<div>
+									<p className="font-semibold mb-2">1. Declaration Merging</p>
+									<p className="mb-3">
+										Interfaces can be merged when declared multiple times, but
+										types cannot.
+									</p>
+									<pre className="bg-gray-900 dark:bg-black text-green-400 p-4 rounded overflow-x-auto">
+										<code>{`// ✅ Interfaces can be merged
+interface User {
+  name: string;
+}
+
+interface User {
+  age: number;
+}
+
+// Result: User has both name and age
+const user: User = {
+  name: "John",
+  age: 30,
+};
+
+// ❌ Types cannot be merged
+type User = {
+  name: string;
+};
+
+type User = {  // Error: Duplicate identifier
+  age: number;
+};`}</code>
+									</pre>
+								</div>
+							</div>
+						</div>
+
+						<div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+							<h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">
+								Extending vs Intersection
+							</h3>
+							<pre className="bg-gray-900 dark:bg-black text-green-400 p-4 rounded overflow-x-auto">
+								<code>{`// Interface: uses 'extends'
+interface Animal {
+  name: string;
+}
+
+interface Dog extends Animal {
+  breed: string;
+}
+
+// Type: uses intersection (&)
+type Animal = {
+  name: string;
+};
+
+type Dog = Animal & {
+  breed: string;
+};
+
+// Both work similarly, but syntax differs
+const myDog: Dog = {
+  name: "Buddy",
+  breed: "Golden Retriever",
+};`}</code>
+							</pre>
+						</div>
+
+						<div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+							<h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">
+								When to Use Each
+							</h3>
+							<div className="space-y-4 text-gray-700 dark:text-gray-300">
+								<div>
+									<p className="font-semibold mb-2">Use Interfaces when:</p>
+									<ul className="list-disc list-inside space-y-1 ml-4">
+										<li>
+											Defining object shapes that might be extended or merged
+										</li>
+										<li>Working with classes (can be implemented)</li>
+										<li>
+											Creating public APIs that might need declaration merging
+										</li>
+										<li>You want clearer error messages for object shapes</li>
+									</ul>
+								</div>
+								<div className="mt-4">
+									<p className="font-semibold mb-2">Use Types when:</p>
+									<ul className="list-disc list-inside space-y-1 ml-4">
+										<li>Creating union or intersection types</li>
+										<li>Defining primitives, tuples, or mapped types</li>
+										<li>You need computed properties or conditional types</li>
+										<li>Creating type aliases for complex type expressions</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+							<h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">
+								Practical Examples
+							</h3>
+							<pre className="bg-gray-900 dark:bg-black text-green-400 p-4 rounded overflow-x-auto">
+								<code>{`// ✅ Type: Union types (only possible with types)
+type Status = "pending" | "approved" | "rejected";
+
+// ✅ Type: Mapped types
+type Optional<T> = {
+  [K in keyof T]?: T[K];
+};
+
+// ✅ Interface: Better for object shapes
+interface ApiResponse {
+  data: any;
+  status: number;
+}
+
+// ✅ Interface: Can be implemented by classes
+class UserService implements ApiResponse {
+  data: any;
+  status: number = 200;
+}
+
+// ✅ Type: Computed properties
+type Keys = "name" | "age";
+type User = {
+  [K in Keys]: string | number;
+};
+
+// ✅ Interface: Declaration merging (useful for extending libraries)
+interface Window {
+  customProperty: string;
+}`}</code>
+							</pre>
+						</div>
+					</div>
+				</section>
+
 				{/* Generics */}
 				<section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 mb-8">
 					<h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
@@ -349,4 +502,3 @@ type UserRecord = Record<string, User>;`}</code>
 		</div>
 	);
 }
-
